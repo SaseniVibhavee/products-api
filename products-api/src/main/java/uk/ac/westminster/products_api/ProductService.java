@@ -10,6 +10,25 @@ import java.util.Optional;
 public class ProductService {
     private final List<Product> products = new ArrayList<>();
     private Long nextId = 1L;
+
+    public ProductService(){
+        Product digitalProduct = new DigitalProduct(
+                nextId++,
+                "Clean Code(E-Book)",
+                100.00,
+                "downloadUrl",
+                12.00
+        );
+
+        Product physicalProduct = new PhysicalProduct(
+                nextId++,
+                "Clean Code(E-Book)",
+                100.00,
+                5.00,
+                "hh"
+        );
+
+    }
     public List<Product> getAllProducts() {
         return products;
     }
